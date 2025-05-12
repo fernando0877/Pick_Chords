@@ -1,37 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-  <meta charset="UTF-8" />
-  <title>Leitor de Cifras</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="manifest" href="manifest.json" />
-
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Leitor de Cifras</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#ffaa55" />
+  </head>
 
   <body>
-<button id="toggleBtn" onclick="togglePainel()">⏪</button>
+    <button id="toggleBtn" onclick="togglePainel()">⏪</button>
 
     <div id="painel-esquerdo">
-    
-	    
       <!-- BUSCA NOME DE MÜSICA -->
       <input type="text" id="buscaInput" placeholder="🔍 Buscar música..." />
-	 
 
-	 
       <!-- Lista -->
-	 <div id="lista" class="lista-container">
-
-	 onchange="mostrarCifra()" style="width: 100%">
+      <div id="lista" class="lista-container">
+        onchange="mostrarCifra()" style="width: 100%">
         <option value="">Selecione uma música...</option>
-	  </div>
+      </div>
     </div>
 
     <pre id="painel-direito">
     🎵 A cifra será exibida aqui...
-    </pre
-    >
+    </pre>
 
     <script src="script.js" defer></script>
   </body>

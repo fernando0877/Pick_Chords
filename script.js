@@ -5,23 +5,22 @@ async function carregarLista() {
   const arquivos = await response.json();
 
   const lista = document.getElementById("lista");
-lista.innerHTML = "";
-arquivosMap = {};
+  lista.innerHTML = "";
+  arquivosMap = {};
 
-arquivos.sort((a, b) => a.localeCompare(b));
+  arquivos.sort((a, b) => a.localeCompare(b));
 
-for (const nome of arquivos) {
-  arquivosMap[nome] = "musicas_extraidas/" + nome;
+  for (const nome of arquivos) {
+    arquivosMap[nome] = "musicas_extraidas/" + nome;
 
-  const item = document.createElement("div");
-  item.className = "item-musica";
-  item.textContent = nome;
-  item.addEventListener("click", () => {
-    mostrarCifra(nome);
-  });
-  lista.appendChild(item);
-}
-
+    const item = document.createElement("div");
+    item.className = "item-musica";
+    item.textContent = nome;
+    item.addEventListener("click", () => {
+      mostrarCifra(nome);
+    });
+    lista.appendChild(item);
+  }
 }
 
 async function mostrarCifra(nome) {
@@ -30,7 +29,6 @@ async function mostrarCifra(nome) {
   const texto = await response.text();
   document.getElementById("painel-direito").textContent = texto;
 }
-
 
 document.addEventListener("DOMContentLoaded", carregarLista);
 
@@ -67,15 +65,8 @@ function togglePainel() {
 }
 
 //registrar aplicativo pra celular
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js').then(reg => {
-    console.log('Service Worker registrado!', reg);
-  }).catch(err => {
-    console.error('Erro ao registrar Service Worker', err);
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service_worker.js").then(() => {
+    console.log("Service Worker registrado com sucesso");
   });
 }
-
-
-
-
-

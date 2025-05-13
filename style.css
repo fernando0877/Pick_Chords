@@ -92,3 +92,53 @@ input[type="text"] {
 .item-musica:hover {
   background-color: #eef;
 }
+
+/* MELHORAr PRA DIFERENTES TELAS */
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  #painel-esquerdo {
+    width: 100%;
+    height: 90vh;
+    font-size: 20px;
+    z-index: 1000;
+  }
+
+  #painel-esquerdo.oculto {
+    display: none;
+  }
+
+  #painel-direito {
+    width: 100%;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+  }
+
+  #painel-direito.expandido {
+    width: 100%;
+    margin: 0;
+  }
+
+  #toggleBtn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1100;
+    width: 36px;
+    height: 36px;
+    font-size: 24px;
+  }
+
+  .item-musica {
+    font-size: 18px;
+  }
+
+  input[type="text"] {
+    font-size: 18px;
+  }
+}

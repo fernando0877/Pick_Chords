@@ -49,18 +49,22 @@ buscaTitulo.addEventListener("input", aplicarFiltros);
 
 //OCULTAR PAINEL ESQUERDO
 function togglePainel() {
-  const painel = document.getElementById("painel-esquerdo");
+  const painelEsquerdo = document.getElementById("painel-esquerdo");
   const painelDireito = document.getElementById("painel-direito");
   const botao = document.getElementById("toggleBtn");
 
-  if (painel.classList.contains("oculto")) {
-    painel.classList.remove("oculto");
-    painelDireito.classList.remove("expandido");
-    botao.innerHTML = "⯇";
-  } else {
-    painel.classList.add("oculto");
-    painelDireito.classList.add("expandido");
+  const painelEsquerdoVisivel = !painelEsquerdo.classList.contains("oculto");
+
+  if (painelEsquerdoVisivel) {
+    // Oculta painel esquerdo, mostra o direito
+    painelEsquerdo.classList.add("oculto");
+    painelDireito.classList.remove("oculto");
     botao.innerHTML = "⯈";
+  } else {
+    // Mostra painel esquerdo, oculta o direito
+    painelEsquerdo.classList.remove("oculto");
+    painelDireito.classList.add("oculto");
+    botao.innerHTML = "⯇";
   }
 }
 

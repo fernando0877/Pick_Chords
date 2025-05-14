@@ -53,20 +53,19 @@ function togglePainel() {
   const painelDireito = document.getElementById("painel-direito");
   const botao = document.getElementById("toggleBtn");
 
-  const painelEsquerdoVisivel = !painelEsquerdo.classList.contains("oculto");
-
-  if (painelEsquerdoVisivel) {
-    // Oculta painel esquerdo, mostra o direito
-    painelEsquerdo.classList.add("oculto");
-    painelDireito.classList.remove("oculto");
-    botao.innerHTML = "⯈";
-  } else {
-    // Mostra painel esquerdo, oculta o direito
+  if (painelEsquerdo.classList.contains("oculto")) {
+    // Mostrar o menu e ocultar o conteúdo
     painelEsquerdo.classList.remove("oculto");
     painelDireito.classList.add("oculto");
     botao.innerHTML = "⯇";
+  } else {
+    // Ocultar o menu e mostrar o conteúdo
+    painelEsquerdo.classList.add("oculto");
+    painelDireito.classList.remove("oculto");
+    botao.innerHTML = "⯈";
   }
 }
+
 
 //registrar aplicativo pra celular
 if ("serviceWorker" in navigator) {

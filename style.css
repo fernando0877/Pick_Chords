@@ -21,6 +21,10 @@ body {
   display: none;
 }
 
+#painel-direito.oculto {
+  display: none;
+}
+
 /* Painel direito */
 #painel-direito {
   flex-grow: 1;

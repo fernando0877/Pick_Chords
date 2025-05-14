@@ -22,7 +22,7 @@ body {
 }
 
 #painel-direito.oculto {
-  display: none;
+  display: none !important;
 }
 
 /* Painel direito */
@@ -118,6 +118,10 @@ input[type="text"] {
   #painel-esquerdo.oculto {
     display: none;
   }
+
+  #painel-direito.oculto {
+  display: none !important;
+}
 
   #painel-direito {
     width: 100%;

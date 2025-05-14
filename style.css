@@ -102,9 +102,12 @@ input[type="text"] {
 
   #painel-esquerdo {
     width: 100%;
-    height: 90vh;
-    font-size: 20px;
-    z-index: 1000;
+    height: calc(100vh - 40px); /* quase toda a tela */
+    font-size: 18px;
+    padding: 10px;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    overflow-y: auto;
   }
 
   #painel-esquerdo.oculto {
@@ -115,8 +118,10 @@ input[type="text"] {
     width: 100%;
     margin: 0;
     font-size: 18px;
+    padding: 12px;
     line-height: 1.5;
     white-space: pre-wrap;
+    overflow-y: auto;
   }
 
   #painel-direito.expandido {
@@ -132,13 +137,18 @@ input[type="text"] {
     width: 36px;
     height: 36px;
     font-size: 24px;
+    line-height: 36px;
   }
 
   .item-musica {
     font-size: 18px;
+    padding: 10px;
   }
 
   input[type="text"] {
     font-size: 18px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
   }
 }
